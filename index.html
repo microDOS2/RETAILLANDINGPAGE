@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover microDOS(2) - Precision Psychedelic Wellness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        psy: {
+                            dark: '#0a0514',
+                            purple: '#6b21a8',
+                            neonPurple: '#9a02d0',
+                            neonGreen: '#44f80c',
+                            neonPink: '#ff66c4',
+                            card: '#150f24'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0514;
+            color: #f3f4f6;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #9a02d0, #44f80c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text-pink {
+            background: linear-gradient(to right, #ff66c4, #9a02d0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background: radial-gradient(circle at 20% 30%, rgba(107, 33, 168, 0.4) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(68, 248, 12, 0.2) 0%, transparent 40%),
+                        #0a0514;
+        }
+        .footer-bg {
+            background: radial-gradient(circle at 50% 50%, rgba(255, 102, 196, 0.3) 0%, rgba(107, 33, 168, 0.2) 40%, #0a0514 80%);
+        }
+        .card-hover {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(154, 2, 208, 0.15);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-psy-neonPurple selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-psy-dark/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 font-bold text-xl tracking-wider">
+                    <span class="text-psy-neonGreen">micro</span><span class="text-psy-neonPurple">DOS</span><span class="text-psy-neonPink">(2)</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#science" class="hover:text-psy-neonGreen transition-colors px-3 py-2 text-sm font-medium">Science</a>
+                        <a href="#dosage" class="hover:text-psy-neonGreen transition-colors px-3 py-2 text-sm font-medium">Dosage</a>
+                        <a href="#safety" class="hover:text-psy-neonGreen transition-colors px-3 py-2 text-sm font-medium">Safety</a>
+                        <a href="#experience" class="hover:text-psy-neonGreen transition-colors px-3 py-2 text-sm font-medium">Experience</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg pt-32 pb-20 px-4 sm:px-6 lg:px-8 min-h-[80vh] flex items-center">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+                Discover <span class="text-psy-neonGreen">micro</span><span class="text-psy-neonPurple">DOS</span><span class="text-psy-neonPink">(2)</span>
+            </h1>
+            <p class="text-2xl md:text-3xl font-light text-gray-300 mb-4">
+                Precision Psychedelic Wellness
+            </p>
+            <p class="text-lg md:text-xl text-gray-400 mb-12 uppercase tracking-widest">
+                for the Modern Explorer
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <div class="flex items-center justify-center gap-2 text-psy-neonGreen bg-white/5 px-6 py-3 rounded-full border border-psy-neonGreen/30">
+                    <i class="ph ph-flask text-xl"></i>
+                    <span class="font-medium">Research-Backed</span>
+                </div>
+                <div class="flex items-center justify-center gap-2 text-psy-neonPurple bg-white/5 px-6 py-3 rounded-full border border-psy-neonPurple/30">
+                    <i class="ph ph-shield-check text-xl"></i>
+                    <span class="font-medium">Safety First</span>
+                </div>
+                <div class="flex items-center justify-center gap-2 text-psy-neonPink bg-white/5 px-6 py-3 rounded-full border border-psy-neonPink/30">
+                    <i class="ph ph-target text-xl"></i>
+                    <span class="font-medium">Precise Dosing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction & Specs -->
+    <section id="science" class="py-20 bg-black/50 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-sm text-psy-neonGreen font-bold tracking-widest uppercase mb-2">Introduction</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold mb-6">What’s in <span class="text-psy-neonGreen">micro</span><span class="text-psy-neonPurple">DOS</span><span class="text-psy-neonPink">(2)</span>?</h3>
+                    
+                    <div class="bg-psy-card border border-white/10 rounded-2xl p-8 mb-6 card-hover">
+                        <h4 class="text-2xl font-bold text-psy-neonPurple mb-1">4-HO-MET</h4>
+                        <p class="text-sm text-gray-400 mb-4 font-mono">4-hydroxy-N-methyl-N-ethyltryptamine</p>
+                        <p class="text-gray-300 mb-6">A precision psychedelic tryptamine first synthesized by Alexander "Sasha" Shulgin in the 1970s, representing decades of psychedelic research and innovation.</p>
+                        <div class="border-t border-white/10 pt-4 mt-4">
+                            <h5 class="font-bold text-white mb-2 flex items-center gap-2">
+                                <i class="ph ph-arrows-left-right text-psy-neonGreen"></i> Comparable to Psilocin
+                            </h5>
+                            <p class="text-gray-400 text-sm">Produces effects similar to psilocin from magic mushrooms, but with enhanced predictability and clarity.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Specifications Grid -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 border-b border-white/10 pb-2">Core Specifications</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-psy-card p-6 rounded-xl border border-white/5 text-center">
+                            <i class="ph ph-timer text-3xl text-psy-neonGreen mb-3 mx-auto"></i>
+                            <div class="text-sm text-gray-400 uppercase tracking-wider mb-1">Onset</div>
+                            <div class="text-2xl font-bold">~15 min</div>
+                        </div>
+                        <div class="bg-psy-card p-6 rounded-xl border border-white/5 text-center">
+                            <i class="ph ph-chart-line-up text-3xl text-psy-neonPurple mb-3 mx-auto"></i>
+                            <div class="text-sm text-gray-400 uppercase tracking-wider mb-1">Peak</div>
+                            <div class="text-2xl font-bold">1.5-2 hrs</div>
+                        </div>
+                        <div class="bg-psy-card p-6 rounded-xl border border-white/5 text-center">
+                            <i class="ph ph-hourglass-high text-3xl text-psy-neonPink mb-3 mx-auto"></i>
+                            <div class="text-sm text-gray-400 uppercase tracking-wider mb-1">Duration</div>
+                            <div class="text-2xl font-bold">≈4 hrs</div>
+                        </div>
+                        <div class="bg-psy-card p-6 rounded-xl border border-white/5 text-center">
+                            <i class="ph ph-pill text-3xl text-white mb-3 mx-auto"></i>
+                            <div class="text-sm text-gray-400 uppercase tracking-wider mb-1">Form</div>
+                            <div class="text-xl font-bold">2mg scored tab</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mechanism of Action -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm text-psy-neonPurple font-bold tracking-widest uppercase mb-2">Mechanism of Action</h2>
+                <h3 class="text-3xl md:text-5xl font-bold">The Science of Clarity</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-psy-card border border-psy-neonPurple/20 p-8 rounded-2xl card-hover relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-psy-neonPurple/10 rounded-bl-full"></div>
+                    <i class="ph ph-brain text-4xl text-psy-neonPurple mb-4"></i>
+                    <h4 class="text-xl font-bold mb-2">Serotonin Receptor Engagement</h4>
+                    <p class="text-sm text-gray-400 font-bold uppercase mb-3">Primary Mechanism</p>
+                    <p class="text-gray-300 text-sm">Metocin engages serotonin receptors, notably the <strong>5-HT2A receptor</strong>, similar to psilocin. This interaction yields psychedelic changes in perception, mood, and cognition while maintaining a clear, energetic headspace.</p>
+                </div>
+
+                <div class="bg-psy-card border border-psy-neonGreen/20 p-8 rounded-2xl card-hover relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-psy-neonGreen/10 rounded-bl-full"></div>
+                    <i class="ph ph-shield-plus text-4xl text-psy-neonGreen mb-4"></i>
+                    <h4 class="text-xl font-bold mb-2">Anti-Inflammatory</h4>
+                    <p class="text-sm text-gray-400 font-bold uppercase mb-3">Systemic Response</p>
+                    <p class="text-gray-300 text-sm">Blocks TNF-&alpha;, IL-1&beta;, and IL-6 cytokines through 5-HT2A activation, providing significant anti-inflammatory pathways.</p>
+                </div>
+
+                <div class="bg-psy-card border border-psy-neonPink/20 p-8 rounded-2xl card-hover relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-psy-neonPink/10 rounded-bl-full"></div>
+                    <i class="ph ph-graph text-4xl text-psy-neonPink mb-4"></i>
+                    <h4 class="text-xl font-bold mb-2">Neuroplasticity</h4>
+                    <p class="text-sm text-gray-400 font-bold uppercase mb-3">Cellular Growth</p>
+                    <p class="text-gray-300 text-sm">Enhances BDNF (Brain-Derived Neurotrophic Factor) stimulation, promoting synaptic growth and neural connectivity.</p>
+                </div>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h4 class="text-2xl font-bold mb-6 border-b border-white/10 pb-4">What It Does</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <i class="ph ph-check-circle text-psy-neonGreen text-xl mt-1 shrink-0"></i>
+                                <span>Modulates mood and emotional processing</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ph ph-check-circle text-psy-neonGreen text-xl mt-1 shrink-0"></i>
+                                <span>Enhances cognitive flexibility and creativity</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ph ph-check-circle text-psy-neonGreen text-xl mt-1 shrink-0"></i>
+                                <span>Alters sensory perception and visual processing</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ph ph-check-circle text-psy-neonGreen text-xl mt-1 shrink-0"></i>
+                                <span>Reduces activity in the default mode network (DMN)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-psy-dark p-8 rounded-xl border border-psy-neonPurple/30">
+                        <h4 class="text-sm uppercase tracking-widest text-psy-neonPurple mb-4 font-bold">User Reports</h4>
+                        <blockquote class="text-xl italic font-light leading-relaxed">
+                            "Users often report a clear, energetic headspace with vivid sensory enhancement—a uniquely manageable psychedelic experience."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Advantages -->
+    <section class="py-20 bg-black/50 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-sm text-center text-psy-neonGreen font-bold tracking-widest uppercase mb-2">Key Advantages</h2>
+            <h3 class="text-3xl md:text-5xl font-bold text-center mb-16">Why Choose <span class="text-psy-neonGreen">micro</span><span class="text-psy-neonPurple">DOS</span><span class="text-psy-neonPink">(2)</span>?</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Advantage 1 -->
+                <div class="bg-psy-card p-6 rounded-xl border border-white/5 card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-lg font-bold">Less Mentally Intense</h4>
+                        <span class="text-xs bg-psy-neonGreen/20 text-psy-neonGreen px-2 py-1 rounded">Ideal for beginners</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Highly visual experiences with a clearheaded, easygoing mental state compared to LSD or psilocin. Easier to navigate and manage.</p>
+                </div>
+                <!-- Advantage 2 -->
+                <div class="bg-psy-card p-6 rounded-xl border border-white/5 card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-lg font-bold">Fast & Predictable</h4>
+                        <span class="text-xs bg-white/10 px-2 py-1 rounded">Plan your day</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Rapid onset (~15 min) with a shorter duration (4-6 hours). Perfect for those who want a manageable time window.</p>
+                </div>
+                <!-- Advantage 3 -->
+                <div class="bg-psy-card p-6 rounded-xl border border-white/5 card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-lg font-bold">Mood Enhancement</h4>
+                        <span class="text-xs bg-psy-neonPink/20 text-psy-neonPink px-2 py-1 rounded">Positive headspace</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Consistent mood improvement and euphoria with minimal anxiety for most users. Life-affirming experiences.</p>
+                </div>
+                <!-- Advantage 4 -->
+                <div class="bg-psy-card p-6 rounded-xl border border-white/5 card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-lg font-bold">Vivid Visuals</h4>
+                    </div>
+                    <p class="text-gray-400 text-sm">Bright, colorful OEVs and CEVs with geometric patterns. One of the most visual psychedelics available.</p>
+                </div>
+                <!-- Advantage 5 -->
+                <div class="bg-psy-card p-6 rounded-xl border border-white/5 card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-lg font-bold">Precise Dosing</h4>
+                    </div>
+                    <p class="text-gray-400 text-sm">2mg scored tablets allow for accurate, consistent dosing. Start low and titrate to your ideal experience.</p>
+                </div>
+                <!-- Advantage 6 -->
+                <div class="bg-psy-card p-6 rounded-xl border border-white/5 card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-lg font-bold">Sensory Enhancement</h4>
+                    </div>
+                    <p class="text-gray-400 text-sm">Enhanced music appreciation, increased sociability, and pleasurable body sensations create a holistic experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dosage Guide -->
+    <section id="dosage" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-sm text-center text-psy-neonPurple font-bold tracking-widest uppercase mb-2">Dosage Guide</h2>
+            <h3 class="text-3xl md:text-5xl font-bold text-center mb-4">Find Your Personalized Journey</h3>
+            <p class="text-center text-gray-400 mb-16">Each <span class="text-psy-neonGreen">micro</span><span class="text-psy-neonPurple">DOS</span><span class="text-psy-neonPink">(2)</span> tablet contains 2mg of Metocin</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+                
+                <!-- LIGHT -->
+                <div class="bg-psy-card border border-green-900/50 p-6 rounded-2xl relative">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-psy-neonGreen rounded-t-2xl opacity-50"></div>
+                    <h4 class="text-2xl font-bold mb-1">LIGHT</h4>
+                    <div class="flex items-baseline gap-2 mb-6">
+                        <span class="text-xl">1 tab</span>
+                        <span class="text-psy-neonGreen font-bold">2mg</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-sm text-gray-300 min-h-[100px]">
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-circle text-[8px] text-psy-neonGreen"></i> Social & playful</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-circle text-[8px] text-psy-neonGreen"></i> Subtle lift</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-circle text-[8px] text-psy-neonGreen"></i> Great for beginners</li>
+                    </ul>
+                    <div class="text-xs text-gray-500 pt-4 border-t border-white/10">
+                        ≈ ½ gram dried mushrooms
+                    </div>
+                </div>
+
+                <!-- MODERATE -->
+                <div class="bg-psy-card border border-blue-900/50 p-6 rounded-2xl relative">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-blue-400 rounded-t-2xl opacity-50"></div>
+                    <h4 class="text-2xl font-bold mb-1">MODERATE</h4>
+                    <div class="flex items-baseline gap-2 mb-6">
+                        <span class="text-xl">2 tabs</span>
+                        <span class="text-blue-400 font-bold">4mg</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-sm text-gray-300 min-h-[100px]">
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-circle text-[8px] text-blue-400"></i> Noticeable effects</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-circle text-[8px] text-blue-400"></i> Gentle visuals</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-circle text-[8px] text-blue-400"></i> Enhanced mood</li>
+                    </ul>
+                    <div class="text-xs text-gray-500 pt-4 border-t border-white/10">
+                        ≈ 1 gram dried mushrooms
+                    </div>
+                </div>
+
+                <!-- TRIPPY -->
+                <div class="bg-psy-card border border-purple-900/50 p-6 rounded-2xl relative">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-psy-neonPurple rounded-t-2xl opacity-50"></div>
+                    <h4 class="text-2xl font-bold mb-1">TRIPPY</h4>
+                    <div class="flex items-baseline gap-2 mb-6">
+                        <span class="text-xl">4 tabs</span>
+                        <span class="text-psy-neonPurple font-bold">8mg</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-sm text-gray-300 min-h-[100px]">
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-circle text-[8px] text-psy-neonPurple"></i> Clear trip characteristics</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-circle text-[8px] text-psy-neonPurple"></i> Strong perceptual changes</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-circle text-[8px] text-psy-neonPurple"></i> Vivid visuals</li>
+                    </ul>
+                    <div class="text-xs text-gray-500 pt-4 border-t border-white/10">
+                        ≈ 2 grams dried mushrooms
+                    </div>
+                </div>
+
+                <!-- TRANSCEND -->
+                <div class="bg-psy-card border border-pink-900/50 p-6 rounded-2xl relative">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-psy-neonPink rounded-t-2xl opacity-50"></div>
+                    <h4 class="text-2xl font-bold mb-1">TRANSCEND</h4>
+                    <div class="flex items-baseline gap-2 mb-6">
+                        <span class="text-xl">6+ tabs</span>
+                        <span class="text-psy-neonPink font-bold">12mg+</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-sm text-gray-300 min-h-[100px]">
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-circle text-[8px] text-psy-neonPink"></i> Deep experiences</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-circle text-[8px] text-psy-neonPink"></i> Transcendental states</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-circle text-[8px] text-psy-neonPink"></i> Experienced users only</li>
+                    </ul>
+                    <div class="text-xs text-gray-500 pt-4 border-t border-white/10">
+                        ≈ 3+ grams dried mushrooms
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="bg-white/5 border border-white/10 rounded-xl p-6 flex items-start gap-4 max-w-3xl mx-auto">
+                <i class="ph-fill ph-info text-2xl text-psy-neonGreen shrink-0 mt-1"></i>
+                <div>
+                    <h5 class="font-bold text-lg mb-1">Pro Tip</h5>
+                    <p class="text-gray-300 text-sm">Start low and assess. Quarter- or half-tab microdosing provides gentler effects for daily wellness. Effects typically begin around 1-2mg.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approaches: Micro vs Macro -->
+    <section class="py-20 bg-black/50 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-16">Microdosing vs Macrodosing</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <!-- Microdosing -->
+                <div class="bg-psy-card border border-white/10 p-8 rounded-2xl">
+                    <h3 class="text-3xl font-bold mb-2 text-psy-neonGreen">Microdosing</h3>
+                    <p class="text-gray-400 uppercase tracking-widest text-sm mb-8">Sub-Hallucinogenic Doses</p>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-white mb-1">Dosage</h4>
+                            <p class="text-gray-300 text-sm">0.5-1 tab (1-2mg) &mdash; quarter or half tablets for gentler effects</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-1">Schedule</h4>
+                            <p class="text-gray-300 text-sm">3x weekly or 4 days on, 3 days off. No daily tolerance buildup.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-3">Benefits:</h4>
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li class="flex items-center gap-2"><i class="ph ph-check text-psy-neonGreen"></i> Improved mood & focus</li>
+                                <li class="flex items-center gap-2"><i class="ph ph-check text-psy-neonGreen"></i> Enhanced creativity</li>
+                                <li class="flex items-center gap-2"><i class="ph ph-check text-psy-neonGreen"></i> Decreased anxiety & stress</li>
+                                <li class="flex items-center gap-2"><i class="ph ph-check text-psy-neonGreen"></i> Daily wellness without intoxication</li>
+                                <li class="flex items-center gap-2"><i class="ph ph-check text-psy-neonGreen"></i> No perceptual disturbances</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-white/10">
+                            <span class="text-gray-400 text-sm">Best for: </span>
+                            <strong class="text-psy-neonGreen">Daily optimization</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Macrodosing -->
+                <div class="bg-psy-card border border-white/10 p-8 rounded-2xl">
+                    <h3 class="text-3xl font-bold mb-2 text-psy-neonPurple">Macrodosing</h3>
+                    <p class="text-gray-400 uppercase tracking-widest text-sm mb-8">Full Psychedelic Experiences</p>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-white mb-1">Dosage</h4>
+                            <p class="text-gray-300 text-sm">2-6+ tabs (4-12mg+) &mdash; full therapeutic or recreational doses</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-1">Duration</h4>
+                            <p class="text-gray-300 text-sm">4-6 hours of immersive experience with 1.5-2 hour peak</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-3">Benefits:</h4>
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li class="flex items-center gap-2"><i class="ph ph-check text-psy-neonPurple"></i> Deep introspection & insight</li>
+                                <li class="flex items-center gap-2"><i class="ph ph-check text-psy-neonPurple"></i> Personal growth & healing</li>
+                                <li class="flex items-center gap-2"><i class="ph ph-check text-psy-neonPurple"></i> Transcendental experiences</li>
+                                <li class="flex items-center gap-2"><i class="ph ph-check text-psy-neonPurple"></i> Strong visual & sensory effects</li>
+                                <li class="flex items-center gap-2"><i class="ph ph-check text-psy-neonPurple"></i> Breakthrough moments</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-white/10">
+                            <span class="text-gray-400 text-sm">Best for: </span>
+                            <strong class="text-psy-neonPurple">Transformational journeys</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center border-t border-white/10 pt-12">
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">47%</div>
+                    <p class="text-gray-400 text-sm uppercase tracking-wide">of psilocybin users microdose</p>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">271K+</div>
+                    <p class="text-gray-400 text-sm uppercase tracking-wide">online community members</p>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">8M</div>
+                    <p class="text-gray-400 text-sm uppercase tracking-wide">Americans used psilocybin (2023)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Profile & Scientific Evidence -->
+    <section id="safety" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm text-psy-neonPink font-bold tracking-widest uppercase mb-2">Clinical Data</h2>
+                <h3 class="text-3xl md:text-5xl font-bold">Safety Profile & Scientific Evidence</h3>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                <!-- Safety Stats -->
+                <div class="bg-psy-card p-8 rounded-2xl border border-white/5 relative overflow-hidden">
+                    <h4 class="text-2xl font-bold mb-6">High Therapeutic Index</h4>
+                    <div class="flex items-end gap-3 mb-4">
+                        <span class="text-6xl font-black text-psy-neonGreen">500&times;</span>
+                        <span class="text-lg text-gray-400 uppercase pb-2">Safety Margin</span>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-6">Lethal dose estimated at 500 times a therapeutic dose of up to 30mg. One of the safest psychedelics with a remarkably wide safety window, making adverse outcomes extremely rare at recommended doses.</p>
+                    
+                    <h5 class="font-bold mt-8 mb-2">Anti-Addictive Properties</h5>
+                    <p class="text-gray-300 text-sm">Psilocybin and related tryptamines do not show evidence of addiction potential. In fact, daily intake leads to loss of therapeutic benefits, naturally preventing dependency.</p>
+                </div>
+
+                <!-- Clinical Study -->
+                <div class="bg-psy-card p-8 rounded-2xl border border-white/5 relative overflow-hidden">
+                    <h4 class="text-2xl font-bold mb-6">Clinical Study Results</h4>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-full bg-psy-neonPurple/20 flex items-center justify-center shrink-0">
+                            <span class="text-2xl font-bold text-psy-neonPurple">110</span>
+                        </div>
+                        <div>
+                            <div class="font-bold">Healthy subjects analyzed</div>
+                            <div class="text-sm text-gray-400">Across 8 double-blind placebo-controlled studies</div>
+                        </div>
+                    </div>
+                    
+                    <blockquote class="border-l-2 border-psy-neonPurple pl-4 italic text-sm text-gray-300 mb-6">
+                        "All acute adverse drug reactions were successfully managed by providing interpersonal support and did not need psychopharmacological intervention."<br>
+                        <span class="text-gray-500 mt-2 block">&mdash; Studerus et al.</span>
+                    </blockquote>
+
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li class="flex items-center gap-2"><i class="ph ph-x-circle text-psy-neonPink"></i> No subsequent drug abuse reported</li>
+                        <li class="flex items-center gap-2"><i class="ph ph-x-circle text-psy-neonPink"></i> No persisting perception disorders</li>
+                        <li class="flex items-center gap-2"><i class="ph ph-x-circle text-psy-neonPink"></i> No prolonged psychosis or long-term impairment</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Scientific Evidence Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- FDA -->
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                    <h4 class="font-bold mb-4 flex items-center gap-2">
+                        <i class="ph ph-certificate text-psy-neonGreen"></i> FDA Breakthrough Therapy
+                    </h4>
+                    <ul class="text-sm text-gray-300 space-y-3">
+                        <li><strong>2018:</strong> Treatment-Resistant Depression</li>
+                        <li><strong>2019:</strong> Major Depressive Disorder</li>
+                    </ul>
+                    <p class="text-xs text-gray-500 mt-4 italic">Designated for drugs demonstrating significant improvement over existing treatments.</p>
+                </div>
+
+                <!-- Mental Health -->
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                    <h4 class="font-bold mb-4 flex items-center gap-2">
+                        <i class="ph ph-heartbeat text-psy-neonPink"></i> Mental Health
+                    </h4>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li>• Depression & anxiety reduction</li>
+                        <li>• OCD symptom improvement</li>
+                        <li>• Addiction treatment (tobacco/alcohol)</li>
+                    </ul>
+                </div>
+
+                <!-- Key Study Results -->
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                    <h4 class="font-bold mb-4 flex items-center gap-2">
+                        <i class="ph ph-chart-bar text-psy-neonPurple"></i> Key Study Results
+                    </h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Mood Improvement</span>
+                            <strong class="text-psy-neonGreen">85%</strong>
+                        </div>
+                        <div class="w-full bg-black/50 rounded-full h-1.5"><div class="bg-psy-neonGreen h-1.5 rounded-full" style="width: 85%"></div></div>
+                        
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-300">Anxiety Reduction</span>
+                            <strong class="text-psy-neonPurple">78%</strong>
+                        </div>
+                        <div class="w-full bg-black/50 rounded-full h-1.5"><div class="bg-psy-neonPurple h-1.5 rounded-full" style="width: 78%"></div></div>
+                        
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-300">Creativity Enhancement</span>
+                            <strong class="text-psy-neonPink">72%</strong>
+                        </div>
+                        <div class="w-full bg-black/50 rounded-full h-1.5"><div class="bg-psy-neonPink h-1.5 rounded-full" style="width: 72%"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 p-6 border border-white/10 rounded-xl bg-black/30">
+                <h5 class="text-sm font-bold text-gray-400 uppercase mb-3">Possible Side Effects</h5>
+                <p class="text-sm text-gray-300 mb-2">Adverse effects are uncommon and limited to:</p>
+                <div class="flex flex-wrap gap-4 text-sm text-gray-400">
+                    <span class="bg-white/5 px-3 py-1 rounded">Short-term anxiety</span>
+                    <span class="bg-white/5 px-3 py-1 rounded">Temporary impaired cognition</span>
+                    <span class="bg-white/5 px-3 py-1 rounded">Mild physical discomfort</span>
+                    <span class="bg-white/5 px-3 py-1 rounded">GI distress (nausea)</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- What to Expect / Experience -->
+    <section id="experience" class="py-20 bg-black/50 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-16">What to Expect from <span class="text-psy-neonGreen">micro</span><span class="text-psy-neonPurple">DOS</span><span class="text-psy-neonPink">(2)</span></h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-psy-neonPurple">Positive Effects</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center gap-3 bg-psy-card p-4 rounded-lg border border-white/5">
+                            <i class="ph ph-eye text-psy-neonPurple text-xl"></i>
+                            <span class="text-sm">Open & closed eye visuals</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-psy-card p-4 rounded-lg border border-white/5">
+                            <i class="ph ph-smiley text-psy-neonPurple text-xl"></i>
+                            <span class="text-sm">Increased humor & laughter</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-psy-card p-4 rounded-lg border border-white/5">
+                            <i class="ph ph-music-notes text-psy-neonPurple text-xl"></i>
+                            <span class="text-sm">Music enhancement</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-psy-card p-4 rounded-lg border border-white/5">
+                            <i class="ph ph-users text-psy-neonPurple text-xl"></i>
+                            <span class="text-sm">Increased sociability</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-psy-card p-4 rounded-lg border border-white/5">
+                            <i class="ph ph-waves text-psy-neonPurple text-xl"></i>
+                            <span class="text-sm">Pleasurable body sensations</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-psy-card p-4 rounded-lg border border-white/5">
+                            <i class="ph ph-lightning text-psy-neonPurple text-xl"></i>
+                            <span class="text-sm">Increased energy</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-psy-card p-4 rounded-lg border border-white/5">
+                            <i class="ph ph-aperture text-psy-neonPurple text-xl"></i>
+                            <span class="text-sm">Bright, colorful patterns</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-psy-card p-4 rounded-lg border border-white/5">
+                            <i class="ph ph-brain text-psy-neonPurple text-xl"></i>
+                            <span class="text-sm">Clear mental state</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-psy-card border-l-4 border-psy-neonPink p-6 rounded-r-lg">
+                        <h4 class="font-bold mb-2">Visual Characteristics</h4>
+                        <p class="text-sm text-gray-300">Known for very colorful open eye visuals—surfaces breathe and move, boundaries between objects reduce, everything takes on a lively appearance. Colors have a neon-like appearance with geometric patterns often described as Aztec or Mayan-like.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-psy-neonGreen">Timeline</h3>
+                    
+                    <div class="relative border-l border-white/20 ml-4 space-y-8 pb-8">
+                        <div class="relative">
+                            <div class="absolute -left-[25px] bg-psy-dark border-2 border-psy-neonGreen w-4 h-4 rounded-full mt-1.5"></div>
+                            <div class="pl-6">
+                                <h4 class="font-bold text-lg text-white">Onset <span class="text-sm font-normal text-psy-neonGreen ml-2">15-30 min</span></h4>
+                                <p class="text-gray-400 text-sm mt-1">First bodily sensations and awareness</p>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[25px] bg-psy-dark border-2 border-psy-neonPurple w-4 h-4 rounded-full mt-1.5"></div>
+                            <div class="pl-6">
+                                <h4 class="font-bold text-lg text-white">Peak <span class="text-sm font-normal text-psy-neonPurple ml-2">1.5-2 hrs</span></h4>
+                                <p class="text-gray-400 text-sm mt-1">Maximum effects and visuals</p>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[25px] bg-psy-dark border-2 border-psy-neonPink w-4 h-4 rounded-full mt-1.5"></div>
+                            <div class="pl-6">
+                                <h4 class="font-bold text-lg text-white">Total Duration <span class="text-sm font-normal text-psy-neonPink ml-2">4-6 hrs</span></h4>
+                                <p class="text-gray-400 text-sm mt-1">Gradual return to baseline</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 bg-white/5 border border-white/10 rounded-xl p-6 flex items-start gap-4">
+                        <i class="ph-fill ph-lightbulb-filament text-2xl text-yellow-500 shrink-0 mt-1"></i>
+                        <div>
+                            <h5 class="font-bold text-lg mb-1">Introductory Potential</h5>
+                            <p class="text-gray-300 text-sm">Many users report feeling 4-HO-MET would be a good introductory psychedelic—giving people a way to understand what a trippy mindset is like while carrying comparatively little psychological risk.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Started & Footer -->
+    <footer class="footer-bg pt-20 pb-10 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+                <!-- Steps -->
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-8">Start Your <span class="text-psy-neonGreen">micro</span><span class="text-psy-neonPurple">DOS</span><span class="text-psy-neonPink">(2)</span> Journey Today</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 rounded-full bg-psy-neonPurple text-white flex items-center justify-center font-bold shrink-0">1</div>
+                            <div>
+                                <h4 class="font-bold text-lg">Start with 1 tablet (2mg)</h4>
+                                <p class="text-sm text-gray-400">Perfect for first-time users to assess sensitivity</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 rounded-full bg-psy-neonPurple text-white flex items-center justify-center font-bold shrink-0">2</div>
+                            <div>
+                                <h4 class="font-bold text-lg">Ensure proper set & setting</h4>
+                                <p class="text-sm text-gray-400">Calm, comfortable environment with trusted companions</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 rounded-full bg-psy-neonPurple text-white flex items-center justify-center font-bold shrink-0">3</div>
+                            <div>
+                                <h4 class="font-bold text-lg">Stay hydrated</h4>
+                                <p class="text-sm text-gray-400">Have water and light snacks available</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 rounded-full bg-psy-neonPurple text-white flex items-center justify-center font-bold shrink-0">4</div>
+                            <div>
+                                <h4 class="font-bold text-lg">Allow 4-6 hours</h4>
+                                <p class="text-sm text-gray-400">Clear your schedule for the full experience</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 p-6 bg-red-900/20 border border-red-500/30 rounded-xl">
+                        <h5 class="font-bold text-red-400 mb-3 flex items-center gap-2"><i class="ph ph-warning-circle"></i> Safety Reminders</h5>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li>• Avoid driving or operating machinery</li>
+                            <li>• Have a sober sitter for higher doses</li>
+                            <li>• Start low, go slow—increase by small increments</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CTA / Conclusion -->
+                <div class="flex flex-col items-center justify-center bg-black/40 border border-white/10 rounded-3xl p-10 text-center">
+                    <h3 class="text-3xl font-bold mb-2">Elevate Your <br><span class="gradient-text-pink">Consciousness</span></h3>
+                    <p class="text-gray-400 mb-8">Experience the future of psychedelic wellness</p>
+                    
+                    <a href="https://microdos2.github.io/storeFinderPage/#/" class="w-48 h-48 bg-white rounded-xl mb-8 flex flex-col items-center justify-center border-4 border-psy-neonPurple shadow-[0_0_30px_rgba(168,85,247,0.4)] hover:scale-105 transition-transform duration-200 group">
+                        <i class="ph ph-map-pin-line text-6xl mb-2 text-psy-purple group-hover:text-psy-neonPurple transition-colors"></i>
+                        <span class="text-gray-900 font-bold text-lg">Find a Store</span>
+                        <span class="text-psy-purple text-xs uppercase tracking-widest mt-1">Store Finder</span>
+                    </a>
+
+                    <div class="space-y-4 w-full text-left">
+                        <div class="bg-white/5 p-4 rounded-lg flex items-center gap-3">
+                            <i class="ph ph-target text-psy-neonPink text-xl"></i>
+                            <div>
+                                <div class="font-bold text-sm">Precision Dosing</div>
+                                <div class="text-xs text-gray-400">2mg scored tablets for ultimate control</div>
+                            </div>
+                        </div>
+                        <div class="bg-white/5 p-4 rounded-lg flex items-center gap-3">
+                            <i class="ph ph-clock text-psy-neonPurple text-xl"></i>
+                            <div>
+                                <div class="font-bold text-sm">Predictable Effects</div>
+                                <div class="text-xs text-gray-400">Fast onset, consistent duration</div>
+                            </div>
+                        </div>
+                        <div class="bg-white/5 p-4 rounded-lg flex items-center gap-3">
+                            <i class="ph ph-sparkle text-psy-neonGreen text-xl"></i>
+                            <div>
+                                <div class="font-bold text-sm">Profound Clarity</div>
+                                <div class="text-xs text-gray-400">Clear headspace, vivid experiences</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center border-t border-white/10 pt-8 flex flex-col items-center justify-center">
+                <div class="font-bold text-2xl tracking-wider mb-2">
+                    <span class="text-psy-neonGreen">micro</span><span class="text-psy-neonPurple">DOS</span><span class="text-psy-neonPink">(2)</span>
+                </div>
+                <p class="text-sm text-gray-500 uppercase tracking-widest">
+                    Research-backed • Safety-first • Quality assured
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
