@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-brand-900 text-gray-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>microDOS(2) | Retailer Portal</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            900: '#0a0514',  /* Updated background color */
+                            800: '#150f24',  /* Updated card/box color */
+                            700: '#1e1633',  /* Slightly lighter for borders */
+                            accent: '#3b82f6',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-900 text-gray-100 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="border-b border-brand-800 bg-brand-900 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0">
+                    <a href="https://microdos2.github.io/INFORMATIONONLY-PAGE-FOR-QR-CODES/" class="text-2xl font-bold tracking-tighter">
+                        <span class="text-[#44f80c]">micro</span><span class="text-[#9a02d0]">DOS</span><span class="text-[#ff66c4]">(2)</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <span class="text-gray-400 text-sm uppercase tracking-widest font-semibold border-l border-brand-700 pl-8">
+                        Retailer Portal
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col max-w-5xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12">
+        <div class="mb-10 text-center md:text-left">
+            <h1 class="text-3xl font-bold tracking-tight mb-2 text-white">Retailer Access</h1>
+            <p class="text-gray-400">Manage your dispensary inventory, view wholesale pricing, and track shipments.</p>
+        </div>
+
+        <!-- Dual Form Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            
+            <!-- Login Form -->
+            <div class="bg-brand-800 border border-brand-700 rounded-xl p-6 lg:p-8 shadow-lg">
+                <h2 class="text-xl font-semibold text-white mb-6">Existing Retailers</h2>
+                <form action="#" method="POST" class="space-y-5">
+                    <div>
+                        <label for="login-email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+                        <input type="email" id="login-email" required 
+                               class="w-full bg-brand-900 border border-brand-700 text-white rounded-lg px-4 py-2.5 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors">
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <label for="login-password" class="block text-sm font-medium text-gray-300">Password</label>
+                            <a href="#" class="text-xs text-brand-accent hover:text-white transition-colors">Forgot password?</a>
+                        </div>
+                        <input type="password" id="login-password" required 
+                               class="w-full bg-brand-900 border border-brand-700 text-white rounded-lg px-4 py-2.5 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors">
+                    </div>
+                    <button type="submit" class="w-full bg-white text-brand-900 font-bold py-3 rounded-lg hover:bg-gray-200 transition-colors mt-4">
+                        Secure Login
+                    </button>
+                </form>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="bg-brand-800/50 border border-brand-800 rounded-xl p-6 lg:p-8">
+                <h2 class="text-xl font-semibold text-white mb-6">Apply for Wholesale</h2>
+                <form action="#" method="POST" class="space-y-4">
+                    <div>
+                        <label for="reg-business" class="block text-sm font-medium text-gray-300 mb-1">Business Name</label>
+                        <input type="text" id="reg-business" required 
+                               class="w-full bg-brand-900 border border-brand-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors">
+                    </div>
+                    <div>
+                        <label for="reg-license" class="block text-sm font-medium text-gray-300 mb-1">State Retail License #</label>
+                        <input type="text" id="reg-license" required 
+                               class="w-full bg-brand-900 border border-brand-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors">
+                    </div>
+                    <div>
+                        <label for="reg-email" class="block text-sm font-medium text-gray-300 mb-1">Contact Email</label>
+                        <input type="email" id="reg-email" required 
+                               class="w-full bg-brand-900 border border-brand-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors">
+                    </div>
+                    <div>
+                        <label for="reg-password" class="block text-sm font-medium text-gray-300 mb-1">Create Password</label>
+                        <input type="password" id="reg-password" required 
+                               class="w-full bg-brand-900 border border-brand-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors">
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2 mb-4">
+                        By applying, you agree to the <a href="#" class="text-brand-accent hover:underline">Retailer Terms of Service</a>. 
+                        All applications are subject to license verification.
+                    </p>
+                    <button type="submit" class="w-full bg-transparent border-2 border-brand-700 text-white font-bold py-2.5 rounded-lg hover:border-white transition-colors">
+                        Submit Application
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-brand-800 bg-brand-900 py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
+            <p>&copy; 2026 <span class="font-semibold text-[#44f80c]">micro</span><span class="font-semibold text-[#9a02d0]">DOS</span><span class="font-semibold text-[#ff66c4]">(2)</span> Inc. All rights reserved.</p>
+            <p class="mt-2 text-xs">This portal is restricted to authorized state-licensed retailers.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
