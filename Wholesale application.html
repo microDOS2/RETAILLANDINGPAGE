@@ -97,7 +97,7 @@
             </a>
             <div class="hidden md:flex items-center space-x-8">
                 <a href="https://microdos2.github.io/RETAILLANDINGPAGE/" class="text-slate-300 hover:text-white">Back to Retail</a>
-                <a href="contact.html" class="hidden md:inline-block px-6 py-2 text-white font-semibold rounded-lg shadow-md border border-[#150f24] hover:bg-[#150f24] transition-colors">
+                <a href="https://microdos2.github.io/RETAILLANDINGPAGE/contact%20microDOS2.html" class="hidden md:inline-block px-6 py-2 text-white font-semibold rounded-lg shadow-md border border-[#150f24] hover:bg-[#150f24] transition-colors">
                     Contact Sales
                 </a>
             </div>
@@ -188,4 +188,121 @@
                             </div>
                             <div class="md:col-span-2">
                                 <label class="block text-sm font-medium text-slate-400 mb-2" for="comments">Additional Information or Questions</label>
-                                <textarea id="comments" rows="4" class="input-field resize-none" placeholder="
+                                <textarea id="comments" rows="4" class="input-field resize-none" placeholder="Tell us about your customer base, specific needs, or timelines..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="border-t border-[#334155] pt-8 flex items-center justify-between">
+                        <p class="text-xs text-slate-500 max-w-sm">By submitting this form, you agree to our Wholesale Terms & Conditions. All wholesale orders require a verified EIN and are subject to approval.</p>
+                        <button type="submit" id="submit-btn" class="btn-primary px-8 py-4 text-white font-bold rounded-lg shadow-lg flex items-center justify-center min-w-[200px]">
+                            <span class="btn-text">Submit Application</span>
+                            <span class="spinner hidden"></span>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Success State -->
+                <div id="success-message" class="hidden absolute inset-0 z-20 flex flex-col items-center justify-center card-bg border border-green-500 rounded-2xl p-10 text-center shadow-2xl">
+                    <div class="w-20 h-20 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-white mb-4">Application Received</h2>
+                    <p class="text-slate-300 mb-8 max-w-md">Thank you for your interest in partnering with microDOS(2). Our wholesale account manager will review your details and contact you within 1-2 business days.</p>
+                    <a href="index.html" class="px-8 py-3 bg-[#150f24] hover:bg-[#1e1a2e] text-white font-semibold rounded-lg transition-colors border border-[#334155]">Return to Homepage</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#0a0514] border-t border-[#150f24] mt-12">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
+                <p>&copy; 2026 <span class="font-bold"><span class="text-[#44f80c]">micro</span><span class="text-[#9a02d0]">DOS</span><span class="text-[#ff66c4]">(2)</span></span> Inc. Wholesale Division.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-slate-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-300">Wholesale Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        // Input Masking
+        const phoneEl = document.getElementById('phone');
+        const einEl = document.getElementById('ein');
+        
+        if (phoneEl) IMask(phoneEl, { mask: '(000) 000-0000' });
+        if (einEl) IMask(einEl, { mask: '00-0000000' });
+
+        // Form Validation & Submission
+        const form = document.getElementById('wholesale-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const spinner = submitBtn.querySelector('.spinner');
+        const successMessage = document.getElementById('success-message');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation check
+            const requiredFields = form.querySelectorAll('[required]');
+            let valid = true;
+            
+            requiredFields.forEach(f => {
+                if(!f.value) {
+                    f.classList.add('border-red-500');
+                    valid = false;
+                } else {
+                    f.classList.remove('border-red-500');
+                }
+            });
+
+            if(!valid) return;
+
+            // UI loading state
+            submitBtn.disabled = true;
+            btnText.classList.add('hidden');
+            spinner.classList.remove('hidden');
+
+            // Gather form data
+            const company = document.getElementById('company-name').value;
+            const ein = document.getElementById('ein').value;
+            const website = document.getElementById('website').value || 'N/A';
+            const bizType = document.getElementById('business-type').value;
+            const fname = document.getElementById('first-name').value;
+            const lname = document.getElementById('last-name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const volume = document.getElementById('volume').value;
+            const comments = document.getElementById('comments').value || 'None';
+
+            // Construct email subject and body
+            const subject = encodeURIComponent(`New Wholesale Application: ${company}`);
+            const body = encodeURIComponent(`New Wholesale Application Received\n\nBUSINESS INFORMATION\nCompany: ${company}\nEIN/Tax ID: ${ein}\nWebsite: ${website}\nBusiness Type: ${bizType}\n\nPRIMARY CONTACT\nName: ${fname} ${lname}\nEmail: ${email}\nPhone: ${phone}\n\nORDER INTENT\nEstimated Monthly Volume: ${volume}\nComments: ${comments}`);
+
+            // Simulate API request delay, then trigger mail client
+            setTimeout(() => {
+                window.location.href = `mailto:paynelynn@live.com?subject=${subject}&body=${body}`;
+                
+                form.style.opacity = '0';
+                setTimeout(() => {
+                    successMessage.classList.remove('hidden');
+                }, 300);
+            }, 1500);
+        });
+
+        // Clear error styles on input
+        form.addEventListener('input', function(e) {
+            if(e.target.hasAttribute('required') && e.target.value) {
+                e.target.classList.remove('border-red-500');
+            }
+        });
+    });
+    </script>
+</body>
+</html>
