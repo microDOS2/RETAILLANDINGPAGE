@@ -3,37 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | microDOS(2) Wholesale</title>
+    <title>Contact Us | microDOS(2)</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        psy: {
+                            dark: '#0a0514',
+                            purple: '#6b21a8',
+                            neonPurple: '#9a02d0',
+                            neonGreen: '#44f80c',
+                            neonPink: '#ff66c4',
+                            card: '#150f24'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     
     <style>
         html {
             scroll-behavior: smooth;
         }
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', system-ui, sans-serif;
             background-color: #0a0514;
-            color: #d1d5db; 
+            color: #f3f4f6;
         }
         .gradient-text {
-            background: linear-gradient(to right, #44f80c, #9a02d0, #ff66c4, #5c38be);
+            background: linear-gradient(to right, #44f80c, #9a02d0, #ff66c4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .btn-primary {
-            background: linear-gradient(to right, #38bdf8, #8b5cf6);
+            background: linear-gradient(to right, #9a02d0, #44f80c);
             transition: all 0.3s ease;
         }
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.2), 0 4px 6px -2px rgba(139, 92, 246, 0.1);
+            box-shadow: 0 10px 25px -5px rgba(154, 2, 208, 0.3);
         }
         .btn-primary:disabled {
             background: #334155;
@@ -47,15 +65,16 @@
         .input-field {
             background-color: #0a0514;
             border: 1px solid #334155;
-            color: #cbd5e1;
+            color: #f3f4f6;
             border-radius: 0.5rem;
             padding: 0.75rem 1rem;
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
             width: 100%;
         }
         .input-field:focus {
             outline: none;
-            border-color: #38bdf8;
+            border-color: #9a02d0;
+            box-shadow: 0 0 0 2px rgba(154, 2, 208, 0.2);
         }
         .spinner {
             display: inline-block;
@@ -69,155 +88,213 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+        .hero-bg {
+            background: radial-gradient(circle at 20% 30%, rgba(107, 33, 168, 0.4) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(68, 248, 12, 0.2) 0%, transparent 40%),
+                        #0a0514;
+        }
     </style>
 </head>
-<body class="antialiased flex flex-col min-h-screen">
+<body class="antialiased selection:bg-psy-neonPurple selection:text-white">
 
-    <!-- Header -->
-    <header class="sticky top-0 z-50 bg-[#0a0514]/70 backdrop-blur-lg border-b border-[#150f24]">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold cursor-pointer">
-                <span class="text-[#44f80c]">micro</span><span class="text-[#9a02d0]">DOS</span><span class="text-[#ff66c4]">(2)</span>
-            </a>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="https://microdos2.github.io/RETAILLANDINGPAGE/" class="text-slate-300 hover:text-white">Back to Retail</a>
-                <a href="index.html" class="px-6 py-2 text-white font-semibold rounded-lg shadow-md btn-primary">
-                    Apply for Wholesale
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-psy-dark/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex-shrink-0 font-bold text-xl tracking-wider cursor-pointer">
+                    <span class="text-psy-neonGreen">micro</span><span class="text-psy-neonPurple">DOS</span><span class="text-psy-neonPink">(2)</span>
                 </a>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html#science" class="hover:text-psy-neonGreen transition-colors px-3 py-2 text-sm font-medium">Science</a>
+                        <a href="index.html#dosage" class="hover:text-psy-neonGreen transition-colors px-3 py-2 text-sm font-medium">Dosage</a>
+                        <a href="index.html#safety" class="hover:text-psy-neonGreen transition-colors px-3 py-2 text-sm font-medium">Safety</a>
+                        <a href="index.html#experience" class="hover:text-psy-neonGreen transition-colors px-3 py-2 text-sm font-medium">Experience</a>
+                    </div>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-400 hover:text-white hover:bg-white/10">
+                    <i class="ph ph-list text-2xl"></i>
+                </button>
             </div>
-            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-slate-400 hover:text-white hover:bg-[#150f24]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
-            <a href="https://microdos2.github.io/RETAILLANDINGPAGE/" class="block text-slate-300 hover:text-white py-2">Back to Retail</a>
-            <a href="index.html" class="block mt-4 w-full text-center px-6 py-3 text-white font-semibold rounded-lg shadow-md btn-primary">
-                Apply for Wholesale
-            </a>
         </div>
-    </header>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2 border-t border-white/10">
+            <a href="index.html#science" class="block text-gray-300 hover:text-psy-neonGreen py-2">Science</a>
+            <a href="index.html#dosage" class="block text-gray-300 hover:text-psy-neonGreen py-2">Dosage</a>
+            <a href="index.html#safety" class="block text-gray-300 hover:text-psy-neonGreen py-2">Safety</a>
+            <a href="index.html#experience" class="block text-gray-300 hover:text-psy-neonGreen py-2">Experience</a>
+        </div>
+    </nav>
 
-    <main class="flex-grow container mx-auto px-6 py-12 md:py-20">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16">
-                <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Contact <span class="gradient-text">microDOS(2)</span> Wholesale</h1>
-                <p class="text-lg text-slate-400 max-w-2xl mx-auto">Have questions about wholesale pricing, bulk orders, or partnership opportunities? Our B2B team is here to help you succeed.</p>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero-bg pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
+                Contact <span class="gradient-text">microDOS(2)</span>
+            </h1>
+            <p class="text-xl md:text-2xl font-light text-gray-300 mb-4 max-w-2xl mx-auto">
+                Have questions about your order, shipping, or how Metocin works?
+            </p>
+            <p class="text-lg text-gray-400 max-w-xl mx-auto">
+                Our support team is here to ensure your journey is seamless and discreet.
+            </p>
+        </div>
+    </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+    <!-- Contact Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                
                 <!-- Contact Info Sidebar -->
                 <div class="space-y-8">
-                    <div>
-                        <h3 class="text-white font-bold text-xl mb-4">Support Channels</h3>
-                        <div class="space-y-4">
+                    <div class="card-bg border border-white/10 rounded-2xl p-8">
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                            <i class="ph ph-headset text-psy-neonPurple"></i>
+                            Support Channels
+                        </h3>
+                        <div class="space-y-6">
                             <div class="flex items-start space-x-4">
-                                <div class="bg-sky-500/10 p-2 rounded-lg text-sky-400">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                <div class="bg-psy-neonPurple/10 p-3 rounded-lg text-psy-neonPurple">
+                                    <i class="ph ph-envelope text-xl"></i>
                                 </div>
                                 <div>
                                     <p class="text-white font-semibold">Email Us</p>
-                                    <a href="mailto:paynelynn@live.com" class="text-slate-400 hover:text-sky-400 transition-colors">paynelynn@live.com</a>
+                                    <a href="mailto:microdos2@gmail.com" class="text-gray-400 hover:text-psy-neonPurple transition-colors text-sm">microdos2@gmail.com</a>
                                 </div>
                             </div>
                             <div class="flex items-start space-x-4">
-                                <div class="bg-green-500/10 p-2 rounded-lg text-green-400">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <div class="bg-psy-neonGreen/10 p-3 rounded-lg text-psy-neonGreen">
+                                    <i class="ph ph-clock text-xl"></i>
                                 </div>
                                 <div>
                                     <p class="text-white font-semibold">Response Time</p>
-                                    <p class="text-slate-400">Usually within 24-48 hours</p>
+                                    <p class="text-gray-400 text-sm">Usually within 24-48 hours</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-psy-neonPink/10 p-3 rounded-lg text-psy-neonPink">
+                                    <i class="ph ph-shield-check text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white font-semibold">Discreet Service</p>
+                                    <p class="text-gray-400 text-sm">Private & confidential</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="p-6 rounded-xl border border-[#150f24] bg-[#150f24]/30">
-                        <h4 class="text-white font-bold mb-2">Wholesale Inquiries</h4>
-                        <p class="text-sm text-slate-400">All communications are private and confidential. We work exclusively with verified businesses and licensed resellers.</p>
+                    <div class="card-bg border border-psy-neonPurple/30 rounded-2xl p-6">
+                        <h4 class="text-white font-bold mb-3 flex items-center gap-2">
+                            <i class="ph ph-lock-key text-psy-neonGreen"></i>
+                            Discreet Inquiries
+                        </h4>
+                        <p class="text-sm text-gray-400">All communications are private. We do not share customer information with any third parties or marketing lists.</p>
+                    </div>
+
+                    <div class="card-bg border border-white/10 rounded-2xl p-6">
+                        <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                        <div class="space-y-3">
+                            <a href="index.html#science" class="flex items-center gap-2 text-gray-400 hover:text-psy-neonGreen transition-colors text-sm">
+                                <i class="ph ph-flask"></i> The Science
+                            </a>
+                            <a href="index.html#dosage" class="flex items-center gap-2 text-gray-400 hover:text-psy-neonPurple transition-colors text-sm">
+                                <i class="ph ph-pill"></i> Dosage Guide
+                            </a>
+                            <a href="index.html#safety" class="flex items-center gap-2 text-gray-400 hover:text-psy-neonPink transition-colors text-sm">
+                                <i class="ph ph-shield-check"></i> Safety Profile
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Contact Form -->
-                <div class="md:col-span-2">
-                    <div id="contact-form-container" class="card-bg rounded-2xl border border-[#150f24] p-8 shadow-2xl">
+                <div class="lg:col-span-2">
+                    <div id="contact-form-container" class="card-bg border border-white/10 rounded-2xl p-8 md:p-10 shadow-2xl">
+                        <h3 class="text-2xl font-bold text-white mb-6">Send us a Message</h3>
+                        
                         <form id="contact-form" class="space-y-6">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div>
-                                    <label for="name" class="block text-sm font-semibold text-slate-300 mb-2">Full Name</label>
+                                    <label for="name" class="block text-sm font-semibold text-gray-300 mb-2">Full Name *</label>
                                     <input type="text" id="name" name="name" class="input-field" placeholder="John Doe" required>
                                 </div>
                                 <div>
-                                    <label for="email" class="block text-sm font-semibold text-slate-300 mb-2">Email Address</label>
+                                    <label for="email" class="block text-sm font-semibold text-gray-300 mb-2">Email Address *</label>
                                     <input type="email" id="email" name="email" class="input-field" placeholder="john@example.com" required>
                                 </div>
                             </div>
+                            
                             <div>
-                                <label for="company" class="block text-sm font-semibold text-slate-300 mb-2">Company Name</label>
-                                <input type="text" id="company" name="company" class="input-field" placeholder="Your Business Name">
-                            </div>
-                            <div>
-                                <label for="subject" class="block text-sm font-semibold text-slate-300 mb-2">Subject</label>
+                                <label for="subject" class="block text-sm font-semibold text-gray-300 mb-2">Subject</label>
                                 <select id="subject" name="subject" class="input-field">
-                                    <option value="Wholesale Inquiry">Wholesale Inquiry</option>
-                                    <option value="Pricing Request">Pricing Request</option>
-                                    <option value="Partnership Opportunity">Partnership Opportunity</option>
-                                    <option value="Bulk Order">Bulk Order</option>
+                                    <option value="Order Status">Order Status</option>
+                                    <option value="Shipping Query">Shipping Query</option>
+                                    <option value="Product Question">Product Question</option>
+                                    <option value="General Inquiry">General Inquiry</option>
                                     <option value="Other">Other</option>
                                 </select>
                             </div>
+                            
                             <div>
-                                <label for="message" class="block text-sm font-semibold text-slate-300 mb-2">Message</label>
-                                <textarea id="message" name="message" rows="5" class="input-field" placeholder="How can we help you?" required></textarea>
+                                <label for="message" class="block text-sm font-semibold text-gray-300 mb-2">Message *</label>
+                                <textarea id="message" name="message" rows="6" class="input-field resize-none" placeholder="How can we help you?" required></textarea>
                             </div>
-                            <button type="submit" id="submit-btn" class="w-full btn-primary text-white font-bold py-4 rounded-lg">
+                            
+                            <button type="submit" id="submit-btn" class="w-full btn-primary text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2">
                                 <span id="btn-text">Send Message</span>
                                 <span id="btn-loader" class="spinner hidden"></span>
                             </button>
                         </form>
 
                         <!-- Success Message -->
-                        <div id="success-message" class="hidden text-center py-10">
-                            <div class="w-20 h-20 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        <div id="success-message" class="hidden text-center py-12">
+                            <div class="w-20 h-20 bg-psy-neonGreen/20 text-psy-neonGreen rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i class="ph ph-check text-4xl"></i>
                             </div>
                             <h3 class="text-2xl font-bold text-white mb-2">Message Sent</h3>
-                            <p class="text-slate-400 mb-8">Thank you for reaching out. We've received your inquiry and will get back to you soon.</p>
-                            <button onclick="resetForm()" class="text-sky-400 hover:text-sky-300 font-semibold underline">Send another message</button>
+                            <p class="text-gray-400 mb-8 max-w-md mx-auto">Thank you for reaching out. We've received your inquiry and will get back to you within 24-48 hours.</p>
+                            <button onclick="resetForm()" class="text-psy-neonPurple hover:text-psy-neonPink font-semibold underline transition-colors">
+                                Send another message
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-[#0a0514] border-t border-[#150f24]">
-        <div class="container mx-auto px-6 py-12">
+    <footer class="border-t border-white/10 bg-black/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-                <div>
-                    <a href="index.html" class="text-2xl font-bold cursor-pointer">
-                        <span class="text-[#44f80c]">micro</span><span class="text-[#9a02d0]">DOS</span><span class="text-[#ff66c4]">(2)</span>
+                <div class="text-center md:text-left">
+                    <a href="index.html" class="font-bold text-2xl tracking-wider cursor-pointer">
+                        <span class="text-psy-neonGreen">micro</span><span class="text-psy-neonPurple">DOS</span><span class="text-psy-neonPink">(2)</span>
                     </a>
-                    <p class="text-slate-400 text-sm mt-1">Precision psychedelics for the modern mind.</p>
+                    <p class="text-gray-500 text-sm mt-2">Precision psychedelics for the modern mind.</p>
                 </div>
-                <div class="flex space-x-6 text-slate-400 text-sm">
-                    <a href="index.html" class="hover:text-white">Wholesale Application</a>
-                    <a href="#" class="hover:text-white">Terms</a>
-                    <a href="#" class="hover:text-white">Privacy</a>
+                <div class="flex flex-wrap justify-center gap-6 text-gray-400 text-sm">
+                    <a href="index.html" class="hover:text-psy-neonGreen transition-colors">Home</a>
+                    <a href="index.html#science" class="hover:text-psy-neonGreen transition-colors">Science</a>
+                    <a href="index.html#dosage" class="hover:text-psy-neonPurple transition-colors">Dosage</a>
+                    <a href="index.html#safety" class="hover:text-psy-neonPink transition-colors">Safety</a>
                 </div>
             </div>
-            <div class="mt-8 text-center text-slate-500 text-xs">
-                &copy; 2026 <span class="text-[#44f80c]">micro</span><span class="text-[#9a02d0]">DOS</span><span class="text-[#ff66c4]">(2)</span> Inc. Wholesale Division. All rights reserved.
+            <div class="mt-8 pt-8 border-t border-white/5 text-center text-gray-600 text-xs">
+                <p>&copy; 2026 <span class="text-psy-neonGreen">micro</span><span class="text-psy-neonPurple">DOS</span><span class="text-psy-neonPink">(2)</span> Inc. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu
+        // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.onclick = () => mobileMenu.classList.toggle('hidden');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
         // Form Handling
         const contactForm = document.getElementById('contact-form');
@@ -226,7 +303,7 @@
         const btnLoader = document.getElementById('btn-loader');
         const successMessage = document.getElementById('success-message');
 
-        contactForm.onsubmit = (e) => {
+        contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
             // UI State: Loading
@@ -239,7 +316,7 @@
                 contactForm.classList.add('hidden');
                 successMessage.classList.remove('hidden');
             }, 1500);
-        };
+        });
 
         function resetForm() {
             contactForm.reset();
